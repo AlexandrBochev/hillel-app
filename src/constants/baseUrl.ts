@@ -1,0 +1,1 @@
+export const BASE_URL='https://62b4cabc-ef4a-488b-9628-97839a97a188.mock.pstmn.io/products'
