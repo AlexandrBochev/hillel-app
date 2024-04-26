@@ -4,6 +4,8 @@ import { AntDesign } from '@expo/vector-icons'
 import { ProductCardProps } from "../../models/models"
 import { styles } from "./styles"
 import { useState } from "react"
+import { colors } from "../../constants/colors"
+import { CustomPressable } from "../custom-pressable/CustomPressable"
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const { id, title, description, price, discount, isNew, image } = product
@@ -31,15 +33,21 @@ const ProductCard = ({ product }: ProductCardProps) => {
           { description }
         </Text>
       </View>
+      
+      <View style={ styles.btn }>
+        <CustomPressable onPress={() => console.log({'id': id, 'currentPrice': currentPrice})}>
+          <View style={ styles.buy }>
+            <Text style={ styles.buyText }>Buy</Text>
+            <FontAwesome5 name="shopping-basket" size={16} color={ colors.blue } />
+          </View>
+        </CustomPressable>
+      </View>
 
-      <TouchableOpacity onPress={() => console.log({'id': id, 'currentPrice': currentPrice})} style={ styles.buy }>
-        <Text style={ styles.buyText }>Buy</Text>
-        <FontAwesome5 name="shopping-basket" size={16} color="white" />
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => setIsFavorite(prev => !prev)} style={ styles.heart }>
-        <AntDesign name={isFavorite ? "heart" : "hearto"} size={24} color="red" />
-      </TouchableOpacity>
+      <View style={ styles.heart }>
+        <CustomPressable onPress={() => setIsFavorite(prev => !prev)}>
+          <AntDesign name={isFavorite ? "heart" : "hearto"} size={24} color={ colors.red } />
+        </CustomPressable>
+      </View>
     </View>
   );
 }

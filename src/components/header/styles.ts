@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native"
+import { colors } from "../../constants/colors"
 
 export const styles = StyleSheet.create({
   header: {
@@ -6,7 +7,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     gap: 10,
     paddingVertical: 20,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
   },
   logo: {
     width: 142,
@@ -14,6 +15,6 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    color: 'gray',
+    color: colors.gray,
   },
 })
