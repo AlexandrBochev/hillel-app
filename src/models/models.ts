@@ -7,3 +7,7 @@ export interface Product {
   isNew: boolean
   image: string
 }
+
+export interface ProductCardProps {
+  product: Product
+}

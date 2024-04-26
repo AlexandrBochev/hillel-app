@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
-import { Image, SafeAreaView, ScrollView, View } from "react-native"
+import { ActivityIndicator, Image, SafeAreaView, ScrollView, View } from "react-native"
 import { styles } from './styles'
 import { ProductCard } from '../../components/product-card/ProductCard'
 import { Product } from '../../models/models'
@@ -28,11 +28,11 @@ const Home = () => {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      {loading && <Image source={ require('../../../assets/loader.gif') } alt='Spinner' style={styles.loading} />}
+      {loading && <ActivityIndicator size="large" style={styles.loading} />}
       <ScrollView>
         <Header />
         <View style={styles.scrollView}>
-          { products.map((product: Product) => <ProductCard key={ product.id } { ...product } />) }
+          { products.map((product: Product) => <ProductCard key={ product.id } product={ product } />) }
         </View>
       </ScrollView>
       <StatusBar style="auto" />

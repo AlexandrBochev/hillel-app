@@ -1,12 +1,12 @@
 import { Image, Text, TouchableOpacity, View } from "react-native"
 import { FontAwesome5 } from '@expo/vector-icons'
 import { AntDesign } from '@expo/vector-icons'
-import { Product } from "../../models/models"
+import { ProductCardProps } from "../../models/models"
 import { styles } from "./styles"
 import { useState } from "react"
 
-const ProductCard = (props: Product) => {
-  const { id, title, description, price, discount, isNew, image } = props
+const ProductCard = ({ product }: ProductCardProps) => {
+  const { id, title, description, price, discount, isNew, image } = product
   const [isFavorite, setIsFavorite] = useState(false)
   const currentPrice = price * (1 - (discount || 0) / 100)
 
