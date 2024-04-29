@@ -13,9 +13,4 @@ export const styles = StyleSheet.create({
     top: '50%',
     zIndex: 1,
   },
-  scrollView: {
-    gap: 20,
-    paddingHorizontal: 20,
-    paddingBottom: 20,
-  },
 })

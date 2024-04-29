@@ -10,6 +10,8 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.white,
     shadowColor: colors.black,
     elevation: 3,
+    marginBottom: 20,
+    marginHorizontal: 20,
   },
   img: {
     width: 92,

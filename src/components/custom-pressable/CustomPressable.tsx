@@ -1,10 +1,6 @@
 import { Pressable } from "react-native";
 import { colors } from "../../constants/colors";
-
-interface CustomPressableProps {
-  children: React.ReactNode
-  onPress: () => void
-}
+import { CustomPressableProps } from "../../models/models";
 
 const CustomPressable = ({ children, onPress }: CustomPressableProps) => {
   return (
