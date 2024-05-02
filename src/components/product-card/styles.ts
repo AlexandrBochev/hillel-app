@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native"
+import { colors } from "../../constants/colors"
 
 export const styles = StyleSheet.create({
   container: {
@@ -6,9 +7,11 @@ export const styles = StyleSheet.create({
     gap: 12,
     padding: 10,
     borderRadius: 8,
-    backgroundColor: "#ffffff",
-    shadowColor: "#000",
+    backgroundColor: colors.white,
+    shadowColor: colors.black,
     elevation: 3,
+    marginBottom: 20,
+    marginHorizontal: 20,
   },
   img: {
     width: 92,
@@ -23,22 +26,22 @@ export const styles = StyleSheet.create({
     height: 36,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "green",
+    backgroundColor: colors.green,
     borderRadius: 18,
-    borderColor: "#fff",
+    borderColor: colors.white,
     borderWidth: 2,
-    shadowColor: "#000",
+    shadowColor: colors.black,
     elevation: 3,
   },
   new: {
-    color: "#fff",
+    color: colors.white,
     fontSize: 10,
     fontWeight: "bold",
     transform: [{ rotate: "-20deg" }],
   },
   title: {
     fontSize: 16,
-    color: "#333",
+    color: colors.blue,
     fontWeight: "bold",
   },
   price: {
@@ -47,7 +50,7 @@ export const styles = StyleSheet.create({
     alignItems: 'flex-end'
   },
   newPrice: {
-    color: "#333",
+    color: colors.dark,
     fontSize: 18,
     fontWeight: "bold",
   },
@@ -60,22 +63,23 @@ export const styles = StyleSheet.create({
   description: {
     fontSize: 12,
     maxWidth: 160,
-    color: "gray",
+    color: colors.gray,
   },
-  buy: {
+  btn: {
     position: "absolute",
     bottom: 10,
     right: 10,
-    alignItems: "center",
+    overflow: "hidden",
+    borderRadius: 6,
+  },
+  buy: {
     flexDirection: "row",
     gap: 6,
-    paddingHorizontal: 10,
+    paddingHorizontal: 6,
     paddingVertical: 6,
-    borderRadius: 6,
-    backgroundColor: "green",
   },
   buyText: {
-    color: "#fff",
+    color: colors.blue,
     fontWeight: "bold",
   },
   heart: {

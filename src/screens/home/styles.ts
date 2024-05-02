@@ -1,9 +1,10 @@
 import { Platform, StyleSheet, StatusBar } from "react-native"
+import { colors } from "../../constants/colors"
 
 export const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     paddingTop: Platform.OS === 'android' ? StatusBar.currentHeight : 0,
   },
   loading: {
@@ -11,10 +12,5 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     top: '50%',
     zIndex: 1,
-  },
-  scrollView: {
-    gap: 20,
-    paddingHorizontal: 20,
-    paddingBottom: 20,
   },
 })
