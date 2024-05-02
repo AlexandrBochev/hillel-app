@@ -45,41 +45,39 @@ const Home = () => {
   const filtredProducts = isNew ? searchProducts.filter(product => product.isNew) : searchProducts
 
   return (
-    <View style={{ flex: 1 }}>
-      <SafeAreaView style={ styles.safeArea }>
-        { loading && <ActivityIndicator size="large" style={ styles.loading } /> }
+    <SafeAreaView style={ styles.safeArea }>
+      { loading && <ActivityIndicator size="large" style={ styles.loading } /> }
 
-        <FlatList
-          data={ filtredProducts }
-          renderItem={ ({ item }) => <ProductCard product={ item } /> }
-          keyExtractor={ (item) => item.id.toString() }
-          ListHeaderComponent={
-            <Header setfavoriteModalVisible={ setfavoriteModalVisible }
-            setFilterModalVisible={ setFilterModalVisible }
-            setSearch={ setSearch }
-            filterActive={ filterActive }
-          /> }
+      <FlatList
+        data={ filtredProducts }
+        renderItem={ ({ item }) => <ProductCard product={ item } /> }
+        keyExtractor={ (item) => item.id.toString() }
+        ListHeaderComponent={
+          <Header setfavoriteModalVisible={ setfavoriteModalVisible }
+          setFilterModalVisible={ setFilterModalVisible }
+          setSearch={ setSearch }
+          filterActive={ filterActive }
+        /> }
+      />
+
+      <CustomModal title='My Favorite Cinnabons' modalVisible={ favoriteModalVisible } setModalVisible={ setfavoriteModalVisible }>
+        <Text>Comming soon...</Text>
+      </CustomModal>
+
+      <CustomModal title='Filter' modalVisible={ filterModalVisible } setModalVisible={ setFilterModalVisible }>
+        <BouncyCheckbox
+          size={24}
+          fillColor={ colors.green }
+          text="Show New Cinnabons"
+          innerIconStyle={{ borderWidth: 4 }}
+          textStyle={{ textDecorationLine: "none"}}
+          isChecked={ isNew }
+          onPress={ (isChecked) => hantleFilter(isChecked) }
         />
+      </CustomModal>
 
-        <CustomModal title='My Favorite Cinnabons' modalVisible={ favoriteModalVisible } setModalVisible={ setfavoriteModalVisible }>
-          <Text>Comming soon...</Text>
-        </CustomModal>
-
-        <CustomModal title='Filter' modalVisible={ filterModalVisible } setModalVisible={ setFilterModalVisible }>
-          <BouncyCheckbox
-            size={24}
-            fillColor={ colors.green }
-            text="Show New Cinnabons"
-            innerIconStyle={{ borderWidth: 4 }}
-            textStyle={{ textDecorationLine: "none"}}
-            isChecked={ isNew }
-            onPress={ (isChecked) => hantleFilter(isChecked) }
-          />
-        </CustomModal>
-
-        <StatusBar style="auto" />
-      </SafeAreaView>
-    </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
   );
 }
 

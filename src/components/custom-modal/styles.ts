@@ -3,7 +3,7 @@ import { colors } from "../../constants/colors"
 
 export const styles = StyleSheet.create({
   pressable: {
-    height: 104,
+    height: '10%',
   },
   centeredView: {
     flex: 1,

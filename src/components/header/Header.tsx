@@ -11,7 +11,7 @@ const Header = ({ setfavoriteModalVisible, setFilterModalVisible, setSearch, fil
 
   const handleSearch = () => {
     setSearch('')
-    setInputVisible(prev => !prev)
+    setInputVisible(!inputVisible)
   }
 
   return (
